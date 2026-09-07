@@ -45,29 +45,37 @@ a { color: inherit; }
 /* ── Masthead ─────────────────────────────────────────────────────────── */
 
 .masthead {
-  border-bottom: 1px solid var(--rule);
-  padding: 26px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 20px 22px 16px;
+  border-bottom: 2px solid var(--ink);
 }
 
 .masthead__logo {
   display: block;
-  margin: 0 auto;
-  width: 232px;
-  max-width: 62vw;
+  width: 208px;
+  max-width: 52vw;
 }
 
 .masthead__nav {
   display: flex;
-  justify-content: center;
-  gap: 26px;
-  margin: 22px 0 0;
-  padding: 11px 0;
-  border-top: 1px solid var(--rule);
+  flex: none;
+  gap: 22px;
   font-family: var(--sans);
   font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-soft);
+}
+
+@media (max-width: 520px) {
+  .masthead { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
 .masthead__nav a { text-decoration: none; }
@@ -377,22 +385,20 @@ h1 {
 
 /* ── Trend entries: numeral, picture, title, two lines ─────────────────── */
 
-.tr { margin: 46px 0 0; padding-top: 26px; border-top: 1px solid var(--rule); }
+.tr { margin: 54px 0 0; padding-top: 0; border-top: none; }
 
-.tr__top { display: grid; grid-template-columns: 1fr; gap: 26px; align-items: start; }
-
-.tr__figwrap { margin: 0; }
+.tr__figwrap { margin: 0 0 20px; }
 
 .tr__ph {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   background: var(--wash);
 }
-/* Every trend picture sits in the same 4:5 frame as the Son of John shot, so
-   the entries line up down the page. */
+/* Landscape 3:2 frame at full column width — the picture leads each entry
+   instead of sitting beside it. */
 .tr__img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   background: var(--wash);
 }
@@ -414,23 +420,34 @@ h1 {
   max-width: 22ch;
 }
 
-.tr__num {
-  display: block;
-  font-family: var(--sans);
-  font-size: 3.2rem;
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.9;
-  color: var(--ink);
-  margin-bottom: 10px;
+.tr__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 14px;
 }
 
-.body .tr__meta h2 {
+.tr__num {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.body .tr__head h2 {
   font-size: 1.45rem;
-  line-height: 1.18;
+  line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.022em;
-  margin: 0 0 14px;
+  margin: 0;
 }
 
 .tr__cta {
@@ -454,11 +471,11 @@ h1 {
   margin-top: 12px;
 }
 
-.tr .tr__text { font-size: 1.02rem; line-height: 1.55; margin: 30px 0 0; }
+.tr .tr__text { font-size: 1.02rem; line-height: 1.58; margin: 0; }
 
 @media (min-width: 620px) {
-  .tr__top { grid-template-columns: 0.9fr 1.1fr; gap: 52px; }
-  .tr__num { font-size: 4.2rem; }
+  .tr__num { width: 54px; height: 54px; font-size: 1.75rem; }
+  .body .tr__head h2 { font-size: 1.62rem; }
 }
 
 /* ── Cookie consent ───────────────────────────────────────────────────── */

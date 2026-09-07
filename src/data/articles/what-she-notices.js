@@ -48,10 +48,10 @@ export default {
     {
       type: 'trend',
       num: '4',
-      h2: 'Your shoes',
+      h2: 'Clean shoes',
       img: null,
-      imgNote: 'IMAGE — worn but cared-for leather shoes or clean flat sneakers.',
-      text: `The old line is that people judge you by your shoes. Half right. Nobody's pricing them — they're checking whether you look after your things. Scuffed and polished reads well. Expensive and filthy doesn't. Five minutes with a brush beats a new pair, every time.`,
+      imgNote: 'IMAGE — clean shoes, any style. Worn in but looked after.',
+      text: `Nobody is pricing your shoes. They are looking at whether they are clean. It sounds like nothing, and it is the smallest thing on this list, but it is the one that says you notice the details — and that lifts your whole look, whatever you have on above them. Scuffed but cared for reads well. Expensive and filthy does not. Five minutes with a brush beats a new pair.`,
     },
 
     {
