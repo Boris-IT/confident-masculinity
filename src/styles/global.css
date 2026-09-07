@@ -1,0 +1,556 @@
+:root {
+  --ink: #111111;
+  --ink-soft: #55565a;
+  --ink-faint: #8b8d92;
+  --rule: #e2e2e0;
+  --paper: #ffffff;
+  --wash: #f2f2f0;
+  --brand: #000000;
+
+  /* No webfont requests: the masthead is artwork, the body is system type.
+     Costs nothing to load, which matters when every visit is paid for. */
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
+           'Times New Roman', 'Liberation Serif', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+
+  --measure: 40.5rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────────── */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 26px 0 0;
+}
+
+.masthead__logo {
+  display: block;
+  margin: 0 auto;
+  width: 232px;
+  max-width: 62vw;
+}
+
+.masthead__nav {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin: 22px 0 0;
+  padding: 11px 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.masthead__nav a { text-decoration: none; }
+.masthead__nav a:hover { color: var(--ink); }
+
+/* ── Article furniture ────────────────────────────────────────────────── */
+
+.kicker {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 42px 0 14px;
+}
+
+h1 {
+  font-size: clamp(2.15rem, 6.6vw, 3.15rem);
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.032em;
+  margin: 0 0 18px;
+}
+
+.dek {
+  font-size: 1.18rem;
+  line-height: 1.48;
+  color: var(--ink-soft);
+  margin: 0 0 26px;
+}
+
+.byline {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-faint);
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+
+.byline strong { color: var(--ink); font-weight: 600; }
+
+.disclosure {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  margin: 0 0 34px;
+}
+
+.hero { margin: 0 0 12px; background: var(--wash); }
+
+.caption {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin: 0 0 38px;
+}
+
+/* ── Body copy ────────────────────────────────────────────────────────── */
+
+.body p { margin: 0 0 1.15em; }
+
+.body > p:first-of-type {
+  font-size: 1.12rem;
+  line-height: 1.55;
+}
+
+.entry { margin: 52px 0 0; }
+
+.entry__num {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--ink-faint);
+  margin: 0 0 8px;
+}
+
+.body .entry h2 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+
+.pull {
+  border-left: 2px solid var(--brand);
+  padding: 2px 0 2px 20px;
+  margin: 30px 0;
+  font-size: 1.16rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* ── Product module ───────────────────────────────────────────────────── */
+
+.pick {
+  background: #fff;
+  border: 1px solid var(--rule);
+  padding: 22px 24px 26px;
+  margin: 34px 0;
+}
+
+.pick__label {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 14px;
+}
+
+.pick__img { margin: 0 0 16px; }
+
+.pick__name {
+  font-size: 1.3rem;
+  margin: 0 0 4px;
+}
+
+.pick__price {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+
+.pick p { font-size: 1rem; line-height: 1.55; margin: 0 0 18px; }
+
+.cta {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 14px 26px;
+}
+
+.cta:hover { opacity: 0.88; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 26px 0 30px;
+}
+
+.card { text-decoration: none; display: block; }
+.card img { background: var(--wash); margin-bottom: 9px; }
+
+.card__name {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.card__price {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 460px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 9px; }
+  .card__name { font-size: 10.5px; }
+  .card__price { font-size: 10.5px; }
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+
+.foot {
+  margin: 70px 0 0;
+  border-top: 1px solid var(--rule);
+  padding: 30px 0 60px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
+.foot a { color: var(--ink-soft); }
+
+/* ── Homepage index ───────────────────────────────────────────────────── */
+
+.idx { margin: 40px 0 0; }
+
+.idx__item {
+  display: block;
+  text-decoration: none;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.idx__item h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.22;
+  margin: 6px 0 8px;
+}
+
+.idx__dek { color: var(--ink-soft); font-size: 1rem; line-height: 1.5; margin: 0; }
+
+/* Product shots are square; a full-column square hero pushes the story too far
+   down the page. Cap it and let it breathe instead. */
+.hero { max-height: 420px; object-fit: contain; padding: 10px 0; margin-inline: auto; }
+.pick__img { max-height: 300px; object-fit: contain; margin-inline: auto; }
+
+/* Advertorial tag under the byline — small, grey, present. */
+.tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border: 1px solid var(--rule);
+  padding: 4px 9px;
+  margin: 0 0 34px;
+}
+
+/* Closing call to action for readers who reach the end. */
+.endcta {
+  margin: 44px 0 0;
+  padding: 26px 0 0;
+  border-top: 1px solid var(--rule);
+}
+.endcta p { font-size: 1.05rem; color: var(--ink-soft); margin: 0 0 16px; }
+
+/* ── Homepage lead story ──────────────────────────────────────────────── */
+
+.lead {
+  display: block;
+  text-decoration: none;
+  padding: 46px 0 34px;
+  border-bottom: 1px solid var(--rule);
+}
+.lead .kicker { margin-top: 0; }
+.lead__title {
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.032em;
+  margin: 0 0 16px;
+}
+.lead__dek { font-size: 1.18rem; line-height: 1.5; color: var(--ink-soft); margin: 0 0 14px; }
+.lead__meta, .idx__meta, .more__meta {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin: 0;
+}
+.idx__meta { margin-top: 8px; }
+
+/* "More from" + section labels */
+.more { margin: 60px 0 0; padding-top: 22px; border-top: 1px solid var(--rule); }
+.more__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 6px;
+}
+.idx .more__label { margin: 34px 0 0; }
+.more__item {
+  display: block;
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.more__kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 4px;
+}
+.more__title { display: block; font-size: 1.22rem; line-height: 1.3; margin-bottom: 4px; }
+
+/* Homepage strap */
+.strap { margin: 40px 0 0; padding: 22px 0 0; }
+.strap p { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); }
+.strap a { color: var(--ink); }
+
+/* The pick module reads as an inset editorial card: white ground, hairline
+   border, product sitting flush rather than inside a second visible box. */
+.pick__label { border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+.pick__name { margin-top: 2px; }
+.pick .cta { margin-top: 2px; }
+
+
+/* ── Trend entries: numeral, picture, title, two lines ─────────────────── */
+
+.tr { margin: 46px 0 0; padding-top: 26px; border-top: 1px solid var(--rule); }
+
+.tr__top { display: grid; grid-template-columns: 1fr; gap: 26px; align-items: start; }
+
+.tr__figwrap { margin: 0; }
+
+.tr__ph {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--wash);
+}
+/* Every trend picture sits in the same 4:5 frame as the Son of John shot, so
+   the entries line up down the page. */
+.tr__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--wash);
+}
+
+.tr__ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  border: 1px dashed #cfcfcb;
+}
+.tr__ph span {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+  text-align: center;
+  max-width: 22ch;
+}
+
+.tr__num {
+  display: block;
+  font-family: var(--sans);
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.body .tr__meta h2 {
+  font-size: 1.45rem;
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  margin: 0 0 14px;
+}
+
+.tr__cta {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 11px 20px;
+}
+.tr__cta:hover { opacity: 0.88; }
+
+.tr__credit {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 12px;
+}
+
+.tr .tr__text { font-size: 1.02rem; line-height: 1.55; margin: 30px 0 0; }
+
+@media (min-width: 620px) {
+  .tr__top { grid-template-columns: 0.9fr 1.1fr; gap: 52px; }
+  .tr__num { font-size: 4.2rem; }
+}
+
+/* ── Cookie consent ───────────────────────────────────────────────────── */
+
+.consent {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  background: #fff;
+  border-top: 1px solid var(--ink);
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.consent__inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.consent__text {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.consent__text a { color: var(--ink); }
+
+.consent__actions { display: flex; gap: 10px; }
+
+/* Both choices are the same size, colour and weight. Making "accept" louder
+   than "decline" is the thing regulators actually pull sites up on. */
+.consent__btn {
+  flex: 1 1 auto;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 11px 18px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+.consent__btn:hover { background: var(--wash); }
+
+@media (min-width: 620px) {
+  .consent__inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 26px; }
+  .consent__actions { flex: none; }
+  .consent__btn { flex: none; min-width: 116px; }
+}
+
+.body h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 34px 0 10px;
+}
+
+/* Small disclosures at the foot of an article — AI imagery, corrections. */
+.note {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  margin: 30px 0 0;
+}
+
+/* Visually identical to the CTA on entry one — same fill, size, type and
+   padding — but still a span: no hover change, default cursor, not focusable,
+   so nothing simulates interactivity beyond the look. */
+.tr__tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 11px 20px;
+  background: var(--brand);
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+
+/* Inline links in body copy — underlined, ink-coloured, no button styling. */
+.body a, .tr__text a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.body a:hover, .tr__text a:hover { color: var(--brand); }

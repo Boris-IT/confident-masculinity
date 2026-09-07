@@ -1,0 +1,83 @@
+---
+import { SITE, OUTBOUND_DEFAULTS } from '../config.js';
+import Consent from '../components/Consent.astro';
+import '../styles/global.css';
+
+const { title, description, image, canonical } = Astro.props;
+const url = canonical ?? new URL(Astro.url.pathname, SITE.domain).href;
+const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <link rel="icon" href="/logo/stacked.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+
+  </head>
+
+  <body>
+    <header class="masthead">
+      <a href="/"><img class="masthead__logo" src="/logo/horizontal-tagline.png" alt={SITE.name} width="1600" height="586" /></a>
+      <nav class="masthead__nav">
+        <a href="/">Latest</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="wrap foot">
+      <p>
+        © {new Date().getFullYear()} {SITE.name} · {SITE.tagline} · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a>
+      </p>
+    </footer>
+
+    <Consent />
+
+    <!--
+      Carries the ad's parameters across to the shop so Shopify doesn't book
+      these sessions as direct traffic. Anything the visitor arrived with wins;
+      our defaults only fill the gaps.
+    -->
+    <script is:inline define:vars={{ shopHost, defaults: OUTBOUND_DEFAULTS }}>
+      (function () {
+        var incoming = new URLSearchParams(window.location.search);
+        var carry = new URLSearchParams();
+
+        Object.keys(defaults).forEach(function (k) { carry.set(k, defaults[k]); });
+
+        // utm_campaign defaults to the article, so each page reports separately.
+        carry.set('utm_campaign', window.location.pathname.replace(/\//g, '') || 'home');
+
+        incoming.forEach(function (value, key) {
+          if (/^(utm_|fbclid|gclid|ttclid|epik|msclkid)/i.test(key)) carry.set(key, value);
+        });
+
+        document.querySelectorAll('a[href]').forEach(function (a) {
+          var href = a.getAttribute('href');
+          if (!href || href.indexOf('http') !== 0) return;
+          var u;
+          try { u = new URL(href); } catch (e) { return; }
+          if (u.hostname.replace(/^www\./, '') !== shopHost) return;
+          carry.forEach(function (value, key) {
+            if (!u.searchParams.has(key)) u.searchParams.set(key, value);
+          });
+          a.setAttribute('href', u.toString());
+        });
+      })();
+    </script>
+  </body>
+</html>
