@@ -59,7 +59,7 @@ export default {
       num: '5',
       h2: 'How you stand',
       img: '/images/posture.jpg',
-      alt: 'Man standing relaxed at a pub bar holding a pint',
+      alt: 'Man standing relaxed against a bar, mid-conversation',
       text: `Not chest out, not squared up. That reads as effort. What actually lands is stillness: weight settled, shoulders down, hands not busy. Most of us fidget when we're nervous, and stopping is a skill you can practise anywhere. Stand still, take your time answering, and let the pause sit. It changes the whole read.`,
     },
 
