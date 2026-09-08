@@ -6,9 +6,9 @@ export default {
   featured: true,
   kicker: 'The list',
   title: 'This Is What a Woman Notices First',
-  dek: "Five small things that tend to land before you've said anything. None of them are about your face, and none of them cost much.",
+  dek: "Five small things people notice before you've said a word. None of them cost much.",
   description:
-    'Five things worth getting right before a first date: your smile, what you wear underneath, how you smell, your shoes, and how you stand.',
+    'Five things worth getting right before a first date: your smile, what you wear underneath, how you smell, clean shoes, and how you stand.',
   author: 'The Confident Masculinity Team',
   date: '2026-09-07',
   dateLabel: '7 September 2026',
@@ -16,7 +16,7 @@ export default {
   hero: null,
 
   blocks: [
-    { type: 'p', html: `Most advice about first impressions is either useless or exhausting. Get a new jaw, get a new job, become someone else by Friday. Forget it. The things that actually register early are small, fixable, and mostly free — and once they're sorted you stop thinking about them, which is the real point. Here are five, in roughly the order they land.` },
+    { type: 'p', html: `Most advice about first impressions is too much work. Get a new job. Get a new face. Be someone else by Friday. Forget it. The things people notice first are small, cheap and easy to fix. Sort them once and you stop thinking about them. Here are five.` },
 
     {
       type: 'trend',
@@ -24,7 +24,7 @@ export default {
       h2: 'Your smile',
       img: '/images/smile.jpg',
       alt: 'Man laughing mid-conversation at a bar',
-      text: `Not whitening strips. Not a grin you practised. What people read is whether it arrives on its own or whether you're deploying it. An easy smile says you're comfortable being here, and comfort is the single most attractive thing on this list. If yours feels stiff, the fix is usually not being early to an unfamiliar place with nothing to do — not dentistry.`,
+      text: `This is not about whitening strips. It is about whether your smile looks real. One that just happens says you are relaxed. One you put on says you are not. Relaxed is the most attractive thing on this list. If yours feels stiff, the fix is usually getting there early enough to settle. Not the dentist.`,
     },
 
     {
@@ -33,7 +33,7 @@ export default {
       h2: 'What you have on underneath',
       img: '/images/boxers.jpg',
       alt: 'Couple laughing in a bathroom, the man in striped woven boxer shorts',
-      text: `Here's an odd asymmetry. Women treat what's underneath as an actual category — chosen, matched, thought about. Most men wear whatever survived the last wash. Nobody's inspecting yours on a first date. But there is a version of you that got dressed properly the whole way down, and that version stands differently. Loose woven boxers beat tight trunks for this: more comfortable, and more grown up. The ones we keep coming back to are from <a href="${SOJ}" rel="sponsored noopener"><strong>Son of John</strong></a> — cut from shirt fabric, so they're thin but hold up, with their own patterns and a warranty. Small upgrade, and you feel it all day.`,
+      text: `Women think about what they wear underneath. They pick it. Most men wear whatever came out of the wash. Nobody is checking on a first date. But if you got dressed properly all the way down, you carry yourself differently. Loose woven boxers beat tight trunks. They are more comfortable and they look more grown up. The best ones we found are from <a href="${SOJ}" rel="sponsored noopener"><strong>Son of John</strong></a>. They are made from shirt fabric, so they are thin but strong, they come in their own patterns, and they have a warranty. Small change, and you feel it all day.`,
     },
 
     {
@@ -42,7 +42,7 @@ export default {
       h2: 'The way you smell',
       img: '/images/scent.jpg',
       alt: 'Man applying fragrance to his neck at a bathroom mirror',
-      text: `This one carries further than you think, and the mistake is almost always volume. Two sprays, on skin, not on your shirt. If people can tell what you're wearing from across a room, it's too much. Clean laundry and a shower do most of the work anyway — scent is the last five percent, not the first.`,
+      text: `Almost everyone uses too much. Two sprays, on your skin, not on your shirt. If people can smell you from across the room, it is too much. A shower and clean clothes do most of the work anyway. Scent is the finishing touch, not the main thing.`,
     },
 
     {
@@ -51,7 +51,7 @@ export default {
       h2: 'Clean shoes',
       img: '/images/shoes.jpg',
       alt: 'Clean suede trainers stepping out of a car',
-      text: `Nobody is pricing your shoes. They are looking at whether they are clean. It sounds like nothing, and it is the smallest thing on this list, but it is the one that says you notice the details — and that lifts your whole look, whatever you have on above them. Scuffed but cared for reads well. Expensive and filthy does not. Five minutes with a brush beats a new pair.`,
+      text: `Nobody is checking what your shoes cost. They are checking whether they are clean. It is the smallest thing here and it does the most. Clean shoes show you care about the little details, and that lifts your whole look. Worn but looked after is fine. Expensive and dirty is not. Five minutes with a brush beats buying a new pair.`,
     },
 
     {
@@ -60,12 +60,12 @@ export default {
       h2: 'How you stand',
       img: '/images/posture.jpg',
       alt: 'Man standing relaxed against a bar, mid-conversation',
-      text: `Not chest out, not squared up. That reads as effort. What actually lands is stillness: weight settled, shoulders down, hands not busy. Most of us fidget when we're nervous, and stopping is a skill you can practise anywhere. Stand still, take your time answering, and let the pause sit. It changes the whole read.`,
+      text: `Chest out and shoulders back looks like effort. What works is being still. Weight settled, shoulders down, hands quiet. Most of us fidget when we are nervous, and you can practise stopping anywhere. Stand still. Take your time answering. Let the pause sit there. It changes how you come across more than anything you say.`,
     },
 
-    { type: 'entry', num: 'The through-line', h2: 'It reads as care, not money' },
-    { type: 'p', html: `Look at the five together and none of them are about spending. They're about attention — whether you bothered. That's what comes across in the first minute, long before anyone's decided anything about you, and it's the one thing you have complete control over.` },
+    { type: 'entry', num: 'The point', h2: 'It reads as care, not money' },
+    { type: 'p', html: `None of these five cost much. They are all about whether you bothered. That is what comes across in the first minute, and it is the part you fully control.` },
 
-    { type: 'p', html: `Start with number two if you want the easiest win. The boxers are from <a href="${SOJ}" rel="sponsored noopener">Son of John</a>, who ship worldwide.` },
+    { type: 'p', html: `Start with number two. It is the easiest one to fix. The boxers are from <a href="${SOJ}" rel="sponsored noopener">Son of John</a>, who ship worldwide.` },
   ],
 };
