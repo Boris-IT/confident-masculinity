@@ -42,7 +42,7 @@ export default {
       h2: 'The way you smell',
       img: '/images/scent.jpg',
       alt: 'Man applying fragrance to his neck at a bathroom mirror',
-      text: `Almost everyone uses too much. Two sprays, on your skin, not on your shirt. If people can smell you from across the room, it is too much. A shower and clean clothes do most of the work anyway. Scent is the finishing touch, not the main thing.`,
+      text: `Most men smell of nothing at all. Some smell of yesterday's shirt. Both are a wasted chance, because this is the one thing on the list people pick up on without even looking at you. A shower and clean clothes are the starting point, not the finish. Pick one scent you actually like and wear it every time, so it becomes yours. Two sprays, on your skin, not on your shirt.`,
     },
 
     {
@@ -51,7 +51,7 @@ export default {
       h2: 'Clean shoes',
       img: '/images/shoes.jpg',
       alt: 'Clean suede trainers stepping out of a car',
-      text: `Nobody is checking what your shoes cost. They are checking whether they are clean. It is the smallest thing here and it does the most. Clean shoes show you care about the little details, and that lifts your whole look. Worn but looked after is fine. Expensive and dirty is not. Five minutes with a brush beats buying a new pair.`,
+      text: `Nobody is checking what your shoes cost. They are checking whether they are clean. It is the smallest thing here and it does the most. Clean shoes show you care about the little details, and that lifts your whole look. Worn but looked after is fine. Expensive and dirty is not. A quick wipe before you head out does more than buying a new pair ever will.`,
     },
 
     {
@@ -60,11 +60,11 @@ export default {
       h2: 'How you stand',
       img: '/images/posture.jpg',
       alt: 'Man standing relaxed against a bar, mid-conversation',
-      text: `Chest out and shoulders back looks like effort. What works is being still. Weight settled, shoulders down, hands quiet. Most of us fidget when we are nervous, and you can practise stopping anywhere. Stand still. Take your time answering. Let the pause sit there. It changes how you come across more than anything you say.`,
+      text: `Chest out and shoulders back looks like effort. What works is being still. Weight settled, shoulders down, hands quiet. Most of us fidget when we are nervous, and you can practise stopping anywhere. Stand still. Take your time answering. Let the pause sit there. Standing still is what makes you look confident, and it does more for that than anything you say.`,
     },
 
-    { type: 'entry', num: 'The point', h2: 'It reads as care, not money' },
-    { type: 'p', html: `None of these five cost much. They are all about whether you bothered. That is what comes across in the first minute, and it is the part you fully control.` },
+    { type: 'entry', num: 'The point', h2: 'It is all in the small details' },
+    { type: 'p', html: `None of these five cost much, and none of them are big. They are small details. But small details are exactly what people pick up on in the first minute, before anyone has decided anything about you. Get them right and the rest looks after itself.` },
 
     { type: 'p', html: `Start with number two. It is the easiest one to fix. The boxers are from <a href="${SOJ}" rel="sponsored noopener">Son of John</a>, who ship worldwide.` },
   ],
