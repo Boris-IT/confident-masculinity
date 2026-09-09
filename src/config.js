@@ -20,7 +20,7 @@ export const SITE = {
 export const TRACKING = {
   metaPixelId: '',   // e.g. '123456789012345'
   ga4Id: '',         // e.g. 'G-XXXXXXXXXX'
-  clarityId: '',         // Microsoft Clarity project id, e.g. 'ab12cd34ef'
+  clarityId: 'yfivvm9a1j',   // Microsoft Clarity project id
 };
 
 // Appended to outbound shop links so Shopify attributes the session.
