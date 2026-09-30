@@ -58,8 +58,16 @@ const more = live
               </div>
               <p class="tr__text" set:html={b.text} />
               {b.cta && (
-                <a class="tr__cta" href={b.href} rel="sponsored noopener">{b.cta}</a>
+                // b.external marks someone else's shop: new tab so the article
+                // stays put, and not tagged "sponsored" — nobody pays us for it.
+                <a
+                  class="tr__cta"
+                  href={b.href}
+                  rel={b.external ? 'nofollow noopener' : 'sponsored noopener'}
+                  target={b.external ? '_blank' : undefined}
+                >{b.cta}</a>
               )}
+              {b.note && <span class="tr__note">{b.note}</span>}
               {b.credit && <span class="tr__credit">Credit: {b.credit}</span>}
             </section>
           );

@@ -465,6 +465,21 @@ h1 {
 }
 .tr__cta:hover { opacity: 0.88; }
 
+/* One quiet line under a button — what to look for, not a hard price. */
+.tr__note {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--ink-faint);
+  margin-top: 10px;
+  max-width: 40ch;
+}
+
+/* The button sits under the paragraph here, so it needs its own air. */
+.tr__cta { margin-top: 20px; }
+
 .tr__credit {
   display: block;
   font-family: var(--sans);

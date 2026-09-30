@@ -33,6 +33,9 @@ export default {
       h2: 'What you have on underneath',
       img: '/images/boxers.jpg',
       alt: 'Couple laughing in a bathroom, the man in striped woven boxer shorts',
+      cta: 'Grab a pair here',
+      href: SOJ,
+      note: 'Shirt fabric, cut loose. Warranty included, ships worldwide.',
       text: `Women think about what they wear underneath. They pick it. Most men wear whatever came out of the wash. Nobody is checking on a first date. But if you got dressed properly all the way down, you carry yourself differently. Loose woven boxers beat tight trunks. They are more comfortable and they look more grown up. The best ones we found are from <a href="${SOJ}" rel="sponsored noopener"><strong>Son of John</strong></a>. They are made from shirt fabric, so they are thin but strong, they come in their own patterns, and they have a warranty. Small change, and you feel it all day.`,
     },
 
@@ -42,6 +45,10 @@ export default {
       h2: 'The way you smell',
       img: '/images/scent.jpg',
       alt: 'Man applying fragrance to his neck at a bathroom mirror',
+      cta: 'Shop similar',
+      href: 'https://www.mrporter.com/en-nl/mens/grooming/fragrance',
+      external: true,
+      note: 'One you will wear every day beats three you will not.',
       text: `Most men smell of nothing at all. Some smell of yesterday's shirt. Both are a wasted chance, because this is the one thing on the list people pick up on without even looking at you. A shower and clean clothes are the starting point, not the finish. Pick one scent you actually like and wear it every time, so it becomes yours. Two sprays, on your skin, not on your shirt.`,
     },
 
@@ -51,6 +58,10 @@ export default {
       h2: 'Clean shoes',
       img: '/images/shoes.jpg',
       alt: 'Clean suede trainers stepping out of a car',
+      cta: 'Shop similar',
+      href: 'https://jasonmarkk.com/collections/shoecare',
+      external: true,
+      note: 'A brush and a cleaner. That is the whole kit.',
       text: `Nobody is checking what your shoes cost. They are checking whether they are clean. It is the smallest thing here and it does the most. Clean shoes show you care about the little details, and that lifts your whole look. Worn but looked after is fine. Expensive and dirty is not. A quick wipe before you head out does more than buying a new pair ever will.`,
     },
 
