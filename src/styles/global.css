@@ -474,7 +474,6 @@ h1 {
   line-height: 1.45;
   color: var(--ink-faint);
   margin-top: 10px;
-  max-width: 40ch;
 }
 
 /* The button sits under the paragraph here, so it needs its own air. */
