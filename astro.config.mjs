@@ -5,5 +5,6 @@ export default defineConfig({
   // Used for canonical URLs and the sitemap. Points at the custom domain even
   // before DNS is switched over, which is what we want in the page metadata.
   site: 'https://confident-masculinity.com',
-  integrations: [sitemap()],
+  // The letter pages are ad landers marked noindex, so they stay out of the sitemap.
+  integrations: [sitemap({ filter: (page) => !page.includes('/a-letter-from-her') })],
 });

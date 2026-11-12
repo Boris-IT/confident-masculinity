@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import Letter from '../../components/Letter.astro';
+import { SITE } from '../../config.js';
+---
+<Base
+  title={`A letter from her | ${SITE.name}`}
+  description="Dear men, we need to talk about your boxers. A letter from all of us."
+  image={`${SITE.domain}/letter/xmas-couple-bedroom.jpg`}
+  bleed
+  noindex
+>
+  <Letter variant="christmas" />
+</Base>

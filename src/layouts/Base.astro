@@ -3,7 +3,7 @@ import { SITE, OUTBOUND_DEFAULTS } from '../config.js';
 import Consent from '../components/Consent.astro';
 import '../styles/global.css';
 
-const { title, description, image, canonical } = Astro.props;
+const { title, description, image, canonical, bleed = false, noindex = false } = Astro.props;
 const url = canonical ?? new URL(Astro.url.pathname, SITE.domain).href;
 const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
 ---
@@ -15,6 +15,7 @@ const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" href="/logo/stacked.png" />
 
     <meta property="og:type" content="article" />
@@ -35,7 +36,8 @@ const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
       </nav>
     </header>
 
-    <main class="wrap">
+    {/* bleed: the page brings its own full-width layout */}
+    <main class={bleed ? undefined : 'wrap'}>
       <slot />
     </main>
 

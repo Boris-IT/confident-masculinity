@@ -1,0 +1,201 @@
+---
+// "A letter from her" — the week-45 lander, running under this site's masthead.
+// Generated from the designer's HTML; the two looks share one template and
+// differ only in five photographs and a colour palette.
+import { SITE } from '../config.js';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/playfair-display/latin-400.css';
+import '@fontsource/playfair-display/latin-600.css';
+import '@fontsource/playfair-display/latin-400-italic.css';
+import '@fontsource/parisienne/latin-400.css';
+import '../styles/letter.css';
+
+const { variant = 'v1' } = Astro.props;
+const xmas = variant === 'christmas';
+const pre = xmas ? 'xmas-' : '';
+const ALT = {
+  "v1": {
+    "couple-bedroom": "A laughing woman in black lingerie stands next to a man sitting on the bed in Son of John boxers",
+    "moment-kitchen": "A man in striped Son of John boxers makes coffee in a sunny kitchen",
+    "moment-dressing": "A man in a white T-shirt and striped Son of John boxers pulls on his jeans on the edge of the bed",
+    "moment-terrace": "At a canal-side terrace in Amsterdam, a man in a loose oversized white T-shirt has a hand under the hem; the striped Son of John waistband shows above his jeans",
+    "ams-couple": "In a kitchen in an Amsterdam canal house, a man in purple striped Son of John boxers stands close to a woman in a white shirt"
+  },
+  "christmas": {
+    "couple-bedroom": "Late on a Christmas evening a laughing woman in a black lace camisole stands by the bed; a man in striped Son of John boxers sits on its edge",
+    "moment-kitchen": "On a snowy Christmas morning a man in striped Son of John boxers pours coffee while she watches from the kitchen doorway",
+    "moment-dressing": "A man in a white T-shirt and striped Son of John boxers pulls on his jeans on the edge of the bed while she puts on her coat",
+    "moment-terrace": "On a snowy rooftop terrace a man hangs Christmas lights; his sweater rides up and the striped Son of John waistband shows above his jeans",
+    "ams-couple": "By the window on a Christmas night a woman in his white shirt pulls a man in striped Son of John boxers close by the waistband"
+  }
+};
+const alt = ALT[xmas ? 'christmas' : 'v1'];
+---
+<div class:list={['soj-letter', { 'is-christmas': xmas }]}>
+<div class="l-wrap">
+  <article class="sheet">
+    <!-- 1 · hero -->
+    <h1>Dear men, we need to talk about your <em>boxers</em>...</h1>
+    <p class="lede">We spend an hour getting ready for you. Every detail, on purpose. This is what we see when your jeans come off, and what we wish you knew.</p>
+    <p class="from">From <b>all of us</b></p>
+    <div class="hero-photo">
+      <img src={`/letter/${pre}couple-bedroom.jpg`} alt={alt["couple-bedroom"]}>
+      <img class="seal" src="/letter/kiss-seal.webp" width="400" height="269" alt="Lipstick kiss">
+    </div>
+    <a class="read-on" href="#letter">Read the letter ↓</a>
+
+    <!-- 2 · the letter -->
+    <section class="letter" id="letter">
+      <p class="salute">Hi. It's us.</p>
+      <p>Your girlfriend. Your date for Saturday. The girl you met last week.</p>
+      <p>Before you see us, we've been at it for an hour. Shower, hair, skin. The outfit, then a different outfit. We make sure we look perfect, down to the last detail. And underneath, a matching set we picked on purpose. Because we know you'll see it...</p>
+      <p class="beat">Then the moment comes. Your jeans come off.</p>
+      <p>And there they are. <mark>The same tight grey boxers you've had for three years.</mark> The waistband gone wavy. The label sticking up at the back.</p>
+      <img class="sad" src="/letter/sad-boxers.webp" width="520" height="520" alt="A pair of faded, pilled grey boxer briefs with a wavy waistband and a frayed label" loading="lazy">
+      <p>We're not angry. We just think nobody ever told you how it works. So let us.</p>
+    </section>
+
+    <hr class="stitch">
+
+    <!-- 3 · how it works -->
+    <section>
+      <h2><mark>4 things</mark> every man should know about his boxers.</h2>
+      <ol class="lessons">
+        <li><div>
+          <h3>Tight isn't the look you think it is.</h3>
+          <p>Tight boxers squeeze and ride up every time you sit down. You don't see it from above. We see it from across the room.</p>
+        </div></li>
+        <li><div>
+          <h3>Tight stretch gives up first.</h3>
+          <p>That tight stretchy kind loses its shape fast. The waistband goes wavy and the black turns grey. If you can't remember when you bought them, it's been too long.</p>
+        </div></li>
+        <li><div>
+          <h3>Your waistband is part of the outfit.</h3>
+          <p>When you bend down to tie your shoe or reach for the top shelf, a bit of waistband shows above your jeans. That's the moment. A nice pair of boxers looks like you meant it. A wavy grey band does not.</p>
+        </div></li>
+        <li><div>
+          <h3>The label gives you away.</h3>
+          <p>A tag sticking up out of your jeans at the back, or one you keep scratching at. We notice both. Every time.</p>
+        </div></li>
+      </ol>
+    </section>
+
+    <hr class="stitch">
+
+    <!-- 4 · examples -->
+    <section>
+      <p class="section-head">For example</p>
+      <h2>The moments we notice. Every time.</h2>
+      <div class="moments">
+        <div class="moment">
+          <figure>
+            <img src={`/letter/${pre}moment-kitchen.jpg`} alt={alt["moment-kitchen"]} loading="lazy">
+            <figcaption>The morning after</figcaption>
+          </figure>
+        </div>
+        <div class="moment">
+          <figure>
+            <img src={`/letter/${pre}moment-dressing.jpg`} alt={alt["moment-dressing"]} loading="lazy">
+            <figcaption>Getting dressed</figcaption>
+          </figure>
+        </div>
+        <div class="moment">
+          <figure>
+            <img src={`/letter/${pre}moment-terrace.jpg`} alt={alt["moment-terrace"]} loading="lazy">
+            <figcaption>Out on the terrace</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <hr class="stitch">
+
+    <!-- 5 · the turn: product -->
+    <section class="turn">
+      <h2 class="turn-head">So we found you a pair.</h2>
+      <p class="big">It's called Son of John.</p>
+      <figure class="product-shot">
+        <p class="callout">Made from shirting fabric<svg viewBox="0 0 30 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M16 3 C 12 14, 19 24, 15 36"/><path d="M15 36 L 9 29 M15 36 L 21 30"/></svg></p>
+        <img src="/letter/product-back.jpg" alt="A pair of blue striped Son of John boxers from the back, with the orange label on the outside of the waistband" loading="lazy">
+      </figure>
+      <ul class="reasons">
+        <li><b>Thin and silky, like a good dress shirt.</b><span>The only boxers made from shirting fabric: 100/2 x 100/2 two-ply poplin in 100% cotton that actually gets better with wear and washes. Even the bag it comes in is 0% plastic.</span></li>
+        <li><b>No tag where it itches.</b><span>The label sits on the outside only. Nothing to scratch, nothing sticking up.</span></li>
+        <li><b>A waistband that stays flat.</b><span>The elastic is woven into the fabric, not stitched on top. It can't twist, because there's nothing to twist.</span></li>
+        <li><b>Built to last.</b><span>Holds its shape and colour wash after wash, with a 1-year worldwide warranty.</span></li>
+      </ul>
+      <a class="btn" href="https://sonofjohnlabel.com/products/3-pack-everyday-office" rel="sponsored noopener">Upgrade your boxers</a>
+      <p class="under">1-year worldwide warranty</p>
+    </section>
+
+    <hr class="stitch">
+
+    <!-- 6 · amsterdam + the girls' chat -->
+    <section class="ams">
+      <h2>Ask <mark>any girl</mark> in Amsterdam.</h2>
+      <p>In Amsterdam, the guys already switched. Walk along the canals on a Saturday and look at the waistbands above the jeans: stripes, gingham, a small patch at the back. Son of John was started there by three friends. The rest of you are next.</p>
+      <div class="ams-photo">
+        <img src={`/letter/${pre}ams-couple.jpg`} alt={alt["ams-couple"]} loading="lazy">
+        <div class="chat" role="group" aria-label="Messages from the girls' group chat">
+          <p class="msg"><b>Sophie</b>OMG guys in those loose boxers?? SO good</p>
+          <p class="msg"><b>Emma</b>Son of John. every guy should own these tbh</p>
+          <p class="msg"><b>Julia</b>the stripes are so sexy 😍</p>
+          <p class="msg me">I'd literally date any guy who wears these 👅</p>
+        </div>
+        <p class="chat-note">Messages shown for illustration.</p>
+      </div>
+    </section>
+
+    <hr class="stitch">
+
+    <!-- 8 · the box -->
+    <section id="box">
+      <h2 class="center">Start here</h2>
+      <p class="tp-plain">4 times sold out</p>
+      <div class="box">
+        <img src="/letter/pack-everyday-office.jpg" alt="Three Son of John boxers: Oxford Stripe, Navy Gingham and Royal Pinstripe" loading="lazy">
+        <div>
+          <h3>The three we'd pick for you</h3>
+          <p class="colours">Oxford Stripe, Navy Gingham and Royal Pinstripe</p>
+          <a class="btn" href="https://sonofjohnlabel.com/products/3-pack-everyday-office" rel="sponsored noopener">Upgrade your boxers</a>
+          <p class="under">1-year worldwide warranty</p>
+          <div class="l-more">
+            <p>Also in 15 colours</p>
+            <div class="minis"><a href="https://sonofjohnlabel.com/products/light-blue-pinstripe" rel="sponsored noopener" title="Light Blue Pinstripe"><img src="/letter/colours/light-blue-pinstripe.png" alt="Light Blue Pinstripe" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/marine-gingham" rel="sponsored noopener" title="Marine Gingham"><img src="/letter/colours/marine-gingham.png" alt="Marine Gingham" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/indigo-stripe" rel="sponsored noopener" title="Indigo Stripe"><img src="/letter/colours/indigo-stripe.png" alt="Indigo Stripe" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/jet-black" rel="sponsored noopener" title="Jet Black"><img src="/letter/colours/jet-black.png" alt="Jet Black" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/blue-bengal" rel="sponsored noopener" title="Blue Bengal"><img src="/letter/colours/blue-bengal.png" alt="Blue Bengal" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/forest-bengal" rel="sponsored noopener" title="Forest Bengal"><img src="/letter/colours/forest-bengal.png" alt="Forest Bengal" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/baby-blue-pinstripe" rel="sponsored noopener" title="Baby Blue Pinstripe"><img src="/letter/colours/baby-blue-pinstripe.png" alt="Baby Blue Pinstripe" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/midnight-navy" rel="sponsored noopener" title="Midnight Navy"><img src="/letter/colours/midnight-navy.png" alt="Midnight Navy" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/horizon-blue" rel="sponsored noopener" title="Horizon Blue"><img src="/letter/colours/horizon-blue.png" alt="Horizon Blue" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/royal-pinstripe" rel="sponsored noopener" title="Royal Pinstripe"><img src="/letter/colours/royal-pinstripe.png" alt="Royal Pinstripe" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/oxford-stripe" rel="sponsored noopener" title="Oxford Stripe"><img src="/letter/colours/oxford-stripe.png" alt="Oxford Stripe" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/evergreen-stripe" rel="sponsored noopener" title="Evergreen Stripe"><img src="/letter/colours/evergreen-stripe.png" alt="Evergreen Stripe" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/navy-gingham" rel="sponsored noopener" title="Navy Gingham"><img src="/letter/colours/navy-gingham.png" alt="Navy Gingham" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/alpine-white" rel="sponsored noopener" title="Alpine White"><img src="/letter/colours/alpine-white.png" alt="Alpine White" loading="lazy" width="120" height="149"></a><a href="https://sonofjohnlabel.com/products/red-bengal" rel="sponsored noopener" title="Red Bengal"><img src="/letter/colours/red-bengal.png" alt="Red Bengal" loading="lazy" width="120" height="149"></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- 9 · sign-off -->
+    <section class="signoff" id="signoff">
+      <p class="love">Love,<br>all of us</p>
+      <p class="behalf">On behalf of all women.</p>
+      <img class="kiss" id="kiss" src="/letter/kiss.webp" width="800" height="537" alt="Lipstick kiss">
+      <p class="ps"><b>P.S.</b> If you're reading this on <u>his</u> phone, send him the link (you're welcome).</p>
+    </section>
+  </article>
+</div>
+</div>
+
+<div class="wrap letter-disclaimer">
+  <p class="disclaimer-foot">{SITE.disclaimer}</p>
+</div>
+
+<script is:inline>
+  // Stamp the kiss when the sign-off scrolls in. It is visible at rest; the stamp only replays the motion.
+  (function () {
+    var kiss = document.getElementById('kiss');
+    if (!('IntersectionObserver' in window) || !kiss) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { kiss.classList.remove('stamp'); void kiss.offsetWidth; kiss.classList.add('stamp'); io.disconnect(); }
+      });
+    }, { threshold: 0.6 });
+    io.observe(kiss);
+  })();
+</script>

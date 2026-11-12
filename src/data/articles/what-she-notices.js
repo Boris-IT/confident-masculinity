@@ -1,4 +1,4 @@
-const SOJ = 'https://www.sonofjohnlabel.com/products/3-pack-i-everyday-office';
+const SOJ = 'https://www.sonofjohnlabel.com/products/3-pack-everyday-office';
 
 export default {
   slug: 'what-she-notices',

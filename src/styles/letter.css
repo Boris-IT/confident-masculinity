@@ -1,0 +1,204 @@
+/* "A letter from her" lander, ported from the week-45 Figma build.
+   Everything is scoped under .soj-letter so it cannot touch the rest of the site. */
+.soj-letter {
+  --ground: #EEF1F6;      
+  --stripe: #D9E1EE;      
+  --sheet: #FFFFFF;
+  --ink: #091C2A;         
+  --indigo: #272B54;      
+  --mute: #4E5A66;
+  --rule: #E0E1E5;
+  --lipstick: #B3172F;
+  --lipstick-soft: #F6E3E5;
+  --display: "Playfair Display", "Iowan Old Style", "Times New Roman", serif;
+  --text: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --hand: "Parisienne", "Snell Roundhand", "Segoe Script", cursive;
+  color-scheme: light;
+}
+
+/* guard against theme styles */
+.soj-letter { text-align: left; }
+.soj-letter h1, .soj-letter h2, .soj-letter h3, .soj-letter p, .soj-letter figure, .soj-letter ol, .soj-letter ul { color: inherit; text-transform: none; letter-spacing: normal; }
+.soj-letter img { max-width: 100%; }
+.soj-letter a { color: inherit; }
+.soj-letter a.btn, .soj-letter a.btn:visited, .soj-letter a.btn:hover { color: #FFFFFF; text-decoration: none; }
+.soj-letter .brand svg { width: 150px; height: auto; display: block; color: var(--indigo); }
+.soj-letter .tp-plain { text-align: center; margin: -8px 0 22px; font-size: 14px; color: var(--mute); }
+
+.soj-letter, .soj-letter * { box-sizing: border-box; }
+.soj-letter {
+  margin: 0;
+  background-color: var(--ground);
+  background-image: repeating-linear-gradient(90deg, var(--stripe) 0 1px, transparent 1px 7px);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.soj-letter .l-wrap {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 56px;
+}
+.soj-letter .brand { display: flex; justify-content: center; padding-block: 8px 20px; }
+.soj-letter .brand img { width: 150px; height: auto; }
+.soj-letter .sheet {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--sheet);
+  box-shadow: 0 1px 2px rgba(9,28,42,.06), 0 18px 40px -18px rgba(9,28,42,.22);
+  padding: 40px 22px 48px;
+}
+@media (min-width: 600px) {
+.soj-letter .sheet { padding: 64px 64px 72px; }
+}
+.soj-letter .kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--lipstick); margin: 0 0 14px;
+}
+.soj-letter h1 {
+  font-family: var(--display); font-weight: 400; font-size: clamp(34px, 8.6vw, 52px);
+  line-height: 1.04; letter-spacing: -.005em; margin: 0 0 18px; text-wrap: balance;
+}
+.soj-letter h1 em { font-style: italic; }
+.soj-letter .lede { font-size: 18px; color: var(--ink); margin: 0 0 22px; max-width: 34em; }
+.soj-letter .from { display: flex; align-items: baseline; gap: 10px; color: var(--mute); font-size: 14px; margin: 0 0 26px; }
+.soj-letter .from b { font-family: var(--hand); font-weight: 400; font-size: 30px; color: var(--indigo); line-height: 1.1; }
+.soj-letter .hero-photo { position: relative; margin: 0 -22px 8px; }
+@media (min-width: 600px) {
+.soj-letter .hero-photo { margin: 0 -64px 8px; }
+.soj-letter .hero-photo img.seal { right: 64px; }
+}
+.soj-letter .hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; }
+.soj-letter .hero-photo { isolation: isolate; }
+.soj-letter .hero-photo img.seal { position: absolute; right: 22px; bottom: -28px; width: 140px; height: auto; aspect-ratio: auto; object-fit: contain; transform: rotate(-12deg); pointer-events: none; z-index: 2; }
+.soj-letter .read-on { display: inline-flex; gap: 8px; align-items: center; margin-top: 40px; font-size: 14px; font-weight: 500; color: var(--indigo); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.soj-letter .letter { font-family: var(--display); font-size: 20px; line-height: 1.6; margin-top: 36px; }
+.soj-letter .letter p { margin: 0 0 1em; }
+.soj-letter .letter .salute { font-family: var(--hand); font-size: 38px; line-height: 1.2; color: var(--indigo); margin-bottom: .5em; }
+.soj-letter .letter .beat { font-style: italic; }
+.soj-letter .letter .sad { display: block; width: 62%; max-width: 260px; height: auto; margin: 6px auto 22px; transform: rotate(-4deg); filter: drop-shadow(0 8px 10px rgba(9,28,42,.14)); }
+.soj-letter mark { background: linear-gradient(transparent 58%, var(--lipstick-soft) 58%); color: inherit; padding: 0 .08em; }
+.soj-letter hr.stitch { border: 0; height: 0; border-top: 1.5px dashed var(--rule); margin: 44px 0; }
+.soj-letter .section-head { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--mute); margin: 0 0 8px; }
+.soj-letter h2.center { text-align: center; }
+.soj-letter .turn-head { font-size: clamp(36px, 10vw, 52px); line-height: 1.05; color: var(--indigo); margin-bottom: 14px; }
+.soj-letter h2 { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 6.6vw, 38px); line-height: 1.12; margin: 0 0 26px; text-wrap: balance; }
+.soj-letter .lessons { list-style: none; padding: 0; margin: 0; display: grid; gap: 28px; counter-reset: lesson; }
+.soj-letter .lessons li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; counter-increment: lesson; }
+.soj-letter .lessons li::before {
+  content: counter(lesson); font-family: var(--display); font-style: italic; font-size: 30px; line-height: 1;
+  color: var(--lipstick); padding-top: 2px;
+}
+.soj-letter .lessons h3 { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.25; margin: 0 0 6px; }
+.soj-letter .lessons p { margin: 0; color: var(--ink); }
+.soj-letter .lessons > li > div { min-width: 0; }
+.soj-letter .moments { display: grid; gap: 22px; }
+.soj-letter .moment { display: grid; gap: 12px; }
+.soj-letter .moment figure { margin: 0; background: var(--sheet); padding: 8px 8px 0; box-shadow: 0 1px 2px rgba(9,28,42,.08), 0 10px 22px -14px rgba(9,28,42,.35); }
+.soj-letter .moment:nth-child(odd) figure { transform: rotate(-1.2deg); }
+.soj-letter .moment:nth-child(even) figure { transform: rotate(1deg); }
+.soj-letter .moment img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.soj-letter .moment figcaption { font-family: var(--hand); font-size: 25px; line-height: 1.45; color: var(--indigo); padding: 2px 4px 6px; }
+.soj-letter .moment p { margin: 0; }
+.soj-letter .turn { text-align: left; }
+.soj-letter .turn .big { font-family: var(--display); font-size: clamp(21px, 5vw, 26px); line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+.soj-letter .turn .big { margin-bottom: 22px; }
+.soj-letter .callout { position: relative; z-index: 2; margin: 0; padding: 14px 8px 0; font-family: var(--hand); font-size: clamp(18px, 5.2vw, 27px); line-height: 1.1; color: var(--lipstick); text-align: center; white-space: nowrap; transform: rotate(-3deg); }
+.soj-letter .callout svg { display: block; width: 24px; height: 28px; margin: 2px auto 0; }
+.soj-letter .loupe { position: absolute; right: 8px; top: 44%; width: 32%; max-width: 160px; margin: 0; text-align: center; z-index: 2; }
+.soj-letter .product-shot .loupe img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 8px 18px -6px rgba(9,28,42,.35); background: #fff; }
+.soj-letter .product-shot { position: relative; margin: 0 0 26px; padding: 0; background: #F5F5F5; }
+.soj-letter .product-shot img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 62%; margin-top: -10%; }
+.soj-letter .reasons { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 18px; }
+.soj-letter .reasons li { border-top: 1px solid var(--rule); padding-top: 14px; }
+.soj-letter .reasons b { display: block; font-weight: 600; font-size: 17px; margin-bottom: 2px; }
+.soj-letter .reasons span { color: var(--mute); }
+.soj-letter .btn {
+  display: flex; justify-content: center; align-items: center; width: 100%; min-height: 54px;
+  background: var(--ink); color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px;
+  letter-spacing: .08em; text-transform: uppercase; border-radius: 2px; padding: 0 20px;
+  transition: background .15s ease;
+}
+.soj-letter .btn:hover { background: var(--indigo); }
+.soj-letter .btn:focus-visible { outline: 3px solid var(--lipstick); outline-offset: 3px; }
+.soj-letter .under { text-align: center; font-size: 13px; color: var(--mute); margin: 10px 0 0; }
+.soj-letter .ams { display: grid; gap: 18px; }
+.soj-letter .ams h2 { margin-bottom: 0; }
+.soj-letter .ams-photo { display: grid; }
+.soj-letter .ams-photo .chat { position: relative; margin: -12% 0 0 14px; width: 78%; max-width: 300px; justify-self: start; }
+.soj-letter .ams-photo .msg { box-shadow: 0 6px 18px -8px rgba(9,28,42,.35); font-size: 13.5px; padding: 6px 11px; }
+.soj-letter .ams-photo .msg + .msg { margin-top: 3px; }
+.soj-letter .ams-photo .msg.me { margin-top: 7px; }
+.soj-letter .ams img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.soj-letter .ams > p { font-family: var(--display); font-size: 20px; margin: 0; }
+.soj-letter .chat { max-width: 330px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--text); }
+.soj-letter .msg { align-self: flex-start; max-width: 78%; margin: 0; background: #E9E9EB; color: #000; border-radius: 18px; padding: 7px 12px; font-size: 15px; line-height: 1.3; }
+.soj-letter .msg b { display: block; font-size: 11px; font-weight: 400; color: #8E8E93; margin: 0 0 1px; }
+.soj-letter .msg + .msg { margin-top: 6px; }
+.soj-letter .msg.me { align-self: flex-end; background: #0A84FF; color: #fff; margin-top: 10px; }
+.soj-letter .tp { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; margin: -8px 0 22px; font-family: var(--text); font-size: 14px; color: var(--ink); }
+.soj-letter .tp-logo { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; letter-spacing: -.01em; font-size: 16px; }
+.soj-letter .tp-logo svg { width: 20px; height: 20px; }
+.soj-letter .tp-stars { display: inline-flex; gap: 2px; }
+.soj-letter .tp-stars i { width: 20px; height: 20px; background: #00B67A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 3.5l2.3 6.9h7.2l-5.8 4.3 2.2 6.9L12 17.3l-5.9 4.3 2.2-6.9-5.8-4.3h7.2z'/%3E%3C/svg%3E") center/15px no-repeat; }
+.soj-letter .tp-stars i.part { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 3.5l2.3 6.9h7.2l-5.8 4.3 2.2 6.9L12 17.3l-5.9 4.3 2.2-6.9-5.8-4.3h7.2z'/%3E%3C/svg%3E"), linear-gradient(90deg, #00B67A 70%, #DCDCE6 70%); background-size: 15px, cover; background-position: center, 0 0; background-repeat: no-repeat; }
+.soj-letter .tp-score { color: var(--mute); }
+.soj-letter .tp-score b { color: var(--ink); font-weight: 600; }
+.soj-letter .tp > span { white-space: nowrap; }
+@media (max-width: 440px) {
+.soj-letter .tp { font-size: 12.5px; gap: 6px 8px; }
+.soj-letter .tp-logo { font-size: 14px; }
+.soj-letter .tp-logo svg { width: 16px; height: 16px; }
+.soj-letter .tp-stars i { width: 16px; height: 16px; background-size: 12px; }
+.soj-letter .tp-stars i.part { background-size: 12px, cover; }
+}
+.soj-letter .box { border: 1.5px dashed var(--rule); padding: 22px 18px 20px; display: grid; gap: 16px; }
+@media (min-width: 600px) {
+.soj-letter .box { padding: 26px; }
+}
+.soj-letter .box img { max-height: 320px; }
+.soj-letter .price s { color: var(--mute); font-size: 20px; font-family: var(--display); }
+.soj-letter .l-more { margin-top: 18px; padding-top: 16px; border-top: 1.5px dashed var(--rule); }
+.soj-letter .l-more p { margin: 0 0 10px; font-size: 13px; color: var(--mute); text-align: center; }
+.soj-letter .minis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px 4px; }
+.soj-letter .minis a { display: block; }
+.soj-letter .box .minis img { display: block; width: 100%; height: auto; max-height: none; aspect-ratio: 1 / 1; object-fit: contain; background: transparent; filter: drop-shadow(0 1px 1.5px rgba(9,28,42,.22)); transition: transform .15s; }
+.soj-letter .minis a:hover img { transform: scale(1.08); }
+.soj-letter .box img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; background: #F5F5F5; }
+.soj-letter .box .name { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); margin: 0; }
+.soj-letter .box h3 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.15; margin: 4px 0 6px; }
+.soj-letter .box .colours { margin: 0 0 12px; color: var(--mute); font-size: 15px; }
+.soj-letter .price { display: flex; align-items: baseline; gap: 10px; margin: 0 0 4px; }
+.soj-letter .price strong { font-family: var(--display); font-size: 34px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.soj-letter .price span { color: var(--mute); font-size: 15px; }
+.soj-letter .per { font-size: 14px; color: var(--mute); margin: 0 0 16px; }
+.soj-letter .box > div { min-width: 0; }
+.soj-letter .signoff { position: relative; padding-top: 10px; margin-top: 48px; }
+.soj-letter .signoff .love { font-family: var(--hand); font-size: 46px; line-height: 1.15; color: var(--indigo); margin: 0; }
+.soj-letter .signoff .behalf { font-family: var(--display); font-style: italic; font-size: 19px; margin: 6px 0 0; }
+.soj-letter .kiss {
+  position: absolute; right: 4px; top: 6px; width: clamp(84px, 24vw, 120px);
+  height: auto; transform: rotate(-14deg); opacity: .94; pointer-events: none;
+}
+.soj-letter .ps { font-family: var(--display); font-size: 18px; margin: 46px 0 0; }
+.soj-letter .ps b { font-family: var(--text); font-size: 13px; letter-spacing: .12em; }
+@media (prefers-reduced-motion: no-preference) {
+.soj-letter .kiss.stamp { animation: stamp .55s cubic-bezier(.2,1.4,.4,1) both; }
+@keyframes stamp { from { transform: rotate(-14deg) scale(1.5); opacity: 0; } to { transform: rotate(-14deg) scale(1); opacity: .94; } }
+}
+.soj-letter .foot { max-width: 640px; margin: 18px auto 0; text-align: center; font-size: 12px; color: var(--mute); }
+
+/* V2 Christmas: same page, warm night palette (Figma Week 45, V2 Christmas) */
+.soj-letter.is-christmas {
+  --ground: #2A1C13; --stripe: #34231B; --sheet: #FBF5EA; --ink: #2B1B12; --indigo: #1E3B2F;
+  --mute: #6E5B4B; --rule: #E5D8C6; --lipstick: #A3182A; --lipstick-soft: #F1D9CF;
+}
+.soj-letter.is-christmas .brand svg { color: #EADFCB; }
+.soj-letter.is-christmas .foot { color: #CDB79C; }
+
+/* additions for this site */
+.soj-letter .chat-note { font-family: var(--text); font-size: 12px; color: var(--mute); margin: 8px 0 0 14px; }
+.letter-disclaimer .disclaimer-foot { margin-top: 28px; }
